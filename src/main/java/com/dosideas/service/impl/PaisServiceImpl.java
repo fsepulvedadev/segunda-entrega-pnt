@@ -37,14 +37,6 @@ public class PaisServiceImpl implements PaisService {
     @Autowired
     private PaisDao paisDao;
 
-    public PaisDao getPaisDao() {
-        return paisDao;
-    }
-
-    public void setPaisDao(PaisDao paisDao) {
-        this.paisDao = paisDao;
-    }
-
     @Override
     public Pais buscarPorId(Long id) {
         return paisDao.buscarPorId(id);

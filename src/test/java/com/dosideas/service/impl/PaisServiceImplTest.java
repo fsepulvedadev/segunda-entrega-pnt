@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import static org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
+import org.springframework.test.util.ReflectionTestUtils;
 
 /**
  * Esta clase representa un test de unitario. Los tests de unitarios
@@ -45,7 +46,7 @@ public class PaisServiceImplTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         instance = new PaisServiceImpl();
-        instance.setPaisDao(paisDaoMock);
+        ReflectionTestUtils.setField(instance, "paisDao", paisDaoMock);
     }
 
     /**
