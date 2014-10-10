@@ -1,14 +1,49 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Introducción al desarrollo Java EE5</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Paises</title>
+
+        <link rel="stylesheet" href="css/bootstrap.css">
     </head>
     <body>
-        <h1>Introducción al desarrollo Java EE5 - Dos Ideas</h1>
-        Más información en <a href="http://www.dosideas.com/cursos/course/view.php?id=4">Introducción al desarrollo Java EE 5</a> en <a href="http://www.dosideas.com">Dos Ideas</a>.
-    </body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Paises</h1>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-6">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Nombre
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="bodyTablaPaises">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Lib JS -->
+        <script src="js/lib/jquery-1.11.1.js"></script>
+        <script src="js/lib/bootstrap.min.js"></script>
+        
+        <!-- JS de la aplicacion -->
+        <script src="js/app/escuelita.js"></script>
+        <script src="js/app/ui/ui.js"></script>
+        <script src="js/app/service/service.js"></script>
+        <script src="js/app/ui/pais/pais.js"></script>
+        <script src="js/app/service/pais/pais.js"></script>
+</body>
 </html>
+
