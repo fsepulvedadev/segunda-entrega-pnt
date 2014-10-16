@@ -1,11 +1,13 @@
 package com.dosideas.service;
 
+import com.dosideas.ApplicationConfig;
 import com.dosideas.domain.Pais;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,12 +30,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author ldeseta
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {
-    "/application-db.xml",
-    "/application-dao.xml",
-    "/application-service.xml",
-    "/application-hibernate.xml"
-})
+@SpringApplicationConfiguration(classes = ApplicationConfig.class)
 @Transactional
 public class PaisServiceComponenteTest {
 
@@ -76,7 +73,7 @@ public class PaisServiceComponenteTest {
      * El metodo debe tirar una IllegalArgumentException al intengar invocar
      * al metodo con un null.
      */
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = InvalidDataAccessApiUsageException.class)
     public void buscarPorId_ConIdNull_lanzaExcepcion() {
         instance.buscarPorId(null);
         fail("Debería haberse lanzado una excepción.");
