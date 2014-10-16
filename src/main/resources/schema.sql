@@ -2,12 +2,12 @@ DROP TABLE IF EXISTS pais;
 DROP TABLE IF EXISTS provincia;
 
 CREATE TABLE pais (
-    id_pais BIGINT IDENTITY PRIMARY KEY,
+    id BIGINT IDENTITY PRIMARY KEY,
     nombre VARCHAR(50)
 );
 
 CREATE TABLE provincia (
-    id_provincia BIGINT IDENTITY PRIMARY KEY,
+    id BIGINT IDENTITY PRIMARY KEY,
     id_pais BIGINT,
     nombre VARCHAR(50)
 );
@@ -35,4 +35,4 @@ INSERT INTO provincia VALUES (16, 1, 'Rio Negro');
 INSERT INTO provincia VALUES (17, 1, 'Salta');
 INSERT INTO provincia VALUES (18, 1, 'San Juan');
 INSERT INTO provincia VALUES (19, 1, 'San Luis');
-INSERT INTO provincia VALUES (20, 1, 'Santa Cruz'); 
+INSERT INTO provincia VALUES (20, 1, 'Santa Cruz');

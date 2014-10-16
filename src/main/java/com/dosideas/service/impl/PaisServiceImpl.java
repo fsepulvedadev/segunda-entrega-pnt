@@ -1,7 +1,7 @@
 package com.dosideas.service.impl;
 
-import com.dosideas.repository.PaisRepository;
 import com.dosideas.domain.Pais;
+import com.dosideas.repository.PaisRepository;
 import com.dosideas.service.PaisService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +40,7 @@ public class PaisServiceImpl implements PaisService {
 
     @Override
     public List<Pais> buscarTodos() {
-        return (List<Pais>) paisRepository.findAll();
+        return paisRepository.findAll();
     }
 
 }

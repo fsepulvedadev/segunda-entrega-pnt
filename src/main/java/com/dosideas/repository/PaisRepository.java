@@ -1,8 +1,8 @@
 package com.dosideas.repository;
 
 import com.dosideas.domain.Pais;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PaisRepository extends CrudRepository<Pais, Long> {
+public interface PaisRepository extends JpaRepository<Pais, Long> {
 
 }

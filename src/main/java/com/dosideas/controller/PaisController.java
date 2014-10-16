@@ -3,9 +3,9 @@ package com.dosideas.controller;
 import com.dosideas.domain.Pais;
 import com.dosideas.exception.PaisNoEncontradoException;
 import com.dosideas.service.PaisService;
-import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -19,8 +19,8 @@ public class PaisController {
     private PaisService paisService;
 
     @RequestMapping("/home")
-    public String home(Map<String, Object> model) {
-        model.put("paises", paisService.buscarTodos());
+    public String home(Model model) {
+        model.addAttribute("paises", paisService.buscarTodos());
         return "pais";
     }
 
