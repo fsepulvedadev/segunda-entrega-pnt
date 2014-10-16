@@ -18,7 +18,7 @@
             <hr>
             <div class="row">
                 <div class="col-md-6">
-                    <h4>Servidor</h4>
+                    <h4>Todos</h4>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
@@ -41,7 +41,7 @@
                     </table>
                 </div>
                 <div class="col-md-6">
-                    <h4>Cliente</h4>
+                    <h4>Solo Pais con Id #1</h4>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
