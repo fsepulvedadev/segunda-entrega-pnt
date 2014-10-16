@@ -19,13 +19,14 @@ public class PaisController {
     private PaisService paisService;
 
     @RequestMapping("/home")
-    public String welcome(Map<String, Object> model) {
-        model.put("paises", paisService.buscasTodos());
+    public String home(Map<String, Object> model) {
+        model.put("paises", paisService.buscarTodos());
         return "pais";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public @ResponseBody Pais buscarPorId(@PathVariable Long id) throws PaisNoEncontradoException {
+    public @ResponseBody
+    Pais buscarPorId(@PathVariable Long id) throws PaisNoEncontradoException {
         Pais pais = paisService.buscarPorId(id);
         if (pais == null) {
             throw new PaisNoEncontradoException("Pais no encontrado");

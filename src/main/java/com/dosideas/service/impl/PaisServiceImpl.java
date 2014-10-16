@@ -39,7 +39,7 @@ public class PaisServiceImpl implements PaisService {
     }
 
     @Override
-    public List<Pais> buscasTodos() {
+    public List<Pais> buscarTodos() {
         return (List<Pais>) paisRepository.findAll();
     }
 

@@ -16,6 +16,6 @@ public interface PaisService {
 
     Pais buscarPorId(Long id);
     
-    List<Pais> buscasTodos();
+    List<Pais> buscarTodos();
 
 }

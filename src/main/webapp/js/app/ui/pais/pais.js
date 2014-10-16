@@ -4,11 +4,9 @@ escuelita.ui.pais = (function () {
         escuelita.service.pais.buscar().done(mostrar);
     }
 
-    function mostrar(paises) {
+    function mostrar(pais) {
         var $bodyTablaPaises = $("#bodyTablaPaises");
-        $.each(paises, function (index, pais) {
-            $bodyTablaPaises.append("<tr><td>" + pais.id +"</td><td>" + pais.nombre + "</td></tr>");
-        });
+        $bodyTablaPaises.append("<tr><td>" + pais.id + "</td><td>" + pais.nombre + "</td></tr>");
     }
 
     return {

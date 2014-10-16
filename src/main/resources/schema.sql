@@ -14,6 +14,7 @@ CREATE TABLE provincia (
 
 
 INSERT INTO pais VALUES (1, 'Argentina');
+INSERT INTO pais VALUES (2, 'Brasil');
 
 INSERT INTO provincia VALUES (1, 1, 'Buenos Aires');
 INSERT INTO provincia VALUES (2, 1, 'Capital Federal');
