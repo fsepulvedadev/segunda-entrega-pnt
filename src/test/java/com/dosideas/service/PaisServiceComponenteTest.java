@@ -16,8 +16,8 @@ import org.springframework.transaction.annotation.Transactional;
  * se encargan de testear una clase en particular, y todas las dependencias
  * que la misma tiene.
  *
- * Este test comprueba el funcionamiento de la clase PaisDao. Esta clase
- * utiliza Hibernate para acceder a la base de datos. Es necesario tener
+ * Este test comprueba el funcionamiento de la clase PaisRepository. Esta clase
+ * utiliza Spring Data para acceder a la base de datos. Es necesario tener
  * entonces la base de datos iniciada, con el modelo de datos del workshop
  * cargado (ver archivo "Instrucciones para crear la BD").
  *
