@@ -1,13 +1,14 @@
 escuelita.service.pais = (function () {
 
-    var urlService = "/dosideas-jee001-workshop/pais/1";
+    var urlService = "/dosideas-jee001-workshop/api/pais/";
 
-    function buscar() {
-        return $.get(urlService);
+    function buscarPorId(idPais) {
+        var urlServiceBuscarPorId = urlService + idPais;
+        return $.get(urlServiceBuscarPorId);
     }
 
     return {
-        buscar: buscar
+        buscarPorId: buscarPorId
     };
 
 })();

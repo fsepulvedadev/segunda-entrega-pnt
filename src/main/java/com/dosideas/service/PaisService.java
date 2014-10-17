@@ -1,8 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package com.dosideas.service;
 
 import com.dosideas.domain.Pais;
@@ -15,7 +10,6 @@ import java.util.List;
 public interface PaisService {
 
     Pais buscarPorId(Long id);
-    
-    List<Pais> buscarTodos();
 
+    List<Pais> buscarTodos();
 }
