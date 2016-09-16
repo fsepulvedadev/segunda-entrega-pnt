@@ -6,8 +6,8 @@ import javax.persistence.Id;
 
 /**
  * Este objeto de dominio utiliza anotaciones para relacionar la clase y sus
- * atributos con una tabla. Hibernate utiliza estas anotaciones para acceder
- * a la base de datos e interactuar con objetos de esta clase.
+ * atributos con una tabla. Hibernate utiliza estas anotaciones para acceder a
+ * la base de datos e interactuar con objetos de esta clase.
  *
  * @author ldeseta
  */
@@ -16,7 +16,6 @@ public class Pais implements Serializable {
 
     @Id
     private Long id;
-
     private String nombre;
 
     public Long getId() {
