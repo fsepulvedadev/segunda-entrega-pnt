@@ -1,7 +1,11 @@
 package com.dosideas.service;
 
+import com.dosideas.ApplicationConfig;
 import com.dosideas.domain.Pais;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +34,17 @@ import org.springframework.transaction.annotation.Transactional;
  * @RunWith(SpringRunner.class): Le indica a JUnit que utilize el Runner de
  * Spring al momento de correr los test (necesario para levantar el contexto de
  * Spring).
- * 
- * @SpringBootTest: Si utilizamos una aplicación con Spring Boot, nos brinda
- * 
+ *
+ * @SpringBootTest: Si utilizamos una aplicación con Spring Boot, nos da
+ * diversas features de Spring Boot (ver Javadoc) Si en la clase
+ * ApplicationConfig utilizamos la anotacion @SpringBootApplication, no hace
+ * falta pasarle la clase como parámetro
+ *
  * @Transactional: Indica que cada uno de los métodos de esta clase es
  * transaccional.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(classes = ApplicationConfig.class)
 @Transactional
 public class PaisServiceComponenteTest {
 
