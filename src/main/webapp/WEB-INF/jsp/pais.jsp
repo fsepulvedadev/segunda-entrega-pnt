@@ -22,12 +22,8 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>
-                                    ID
-                                </th>
-                                <th>
-                                    Nombre
-                                </th>
+                                <th>ID</th>
+                                <th>Nombre</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,20 +50,16 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>
-                                    ID
-                                </th>
-                                <th>
-                                    Nombre
-                                </th>
+                                <th>ID</th>
+                                <th>Nombre</th>
                             </tr>
                         </thead>
-                        <tbody id="bodyTablaPais">
-                        </tbody>
+                        <tbody id="bodyTablaPais"></tbody>
                     </table>
                 </div>
             </div>
         </div>
+
         <!-- Lib JS -->
         <script src="js/lib/jquery-1.11.1.js"></script>
         <script src="js/lib/bootstrap.min.js"></script>

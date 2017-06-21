@@ -8,10 +8,9 @@ CREATE TABLE pais (
 
 CREATE TABLE provincia (
     id BIGINT IDENTITY PRIMARY KEY,
-    id_pais BIGINT,
+    id_pais BIGINT FOREIGN KEY REFERENCES pais,
     nombre VARCHAR(50)
 );
-
 
 INSERT INTO pais VALUES (1, 'Argentina');
 INSERT INTO pais VALUES (2, 'Brasil');

@@ -1,8 +1,10 @@
 package com.dosideas.domain;
 
-import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.io.Serializable;
 
 /**
  * Este objeto de dominio utiliza anotaciones para relacionar la clase y sus
@@ -15,6 +17,7 @@ import javax.persistence.Id;
 public class Pais implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
 

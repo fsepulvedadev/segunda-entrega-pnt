@@ -2,10 +2,6 @@ package com.dosideas.service;
 
 import com.dosideas.ApplicationConfig;
 import com.dosideas.domain.Pais;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.fail;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.fail;
 
 /**
  * Esta clase representa un test de componente. Los tests de componentes se
@@ -36,7 +37,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Spring).
  *
  * @SpringBootTest: Si utilizamos una aplicación con Spring Boot, nos da
- * diversas features de Spring Boot (ver Javadoc) Si en la clase
+ * diversas features de Spring Boot (ver Javadoc). Si en la clase
  * ApplicationConfig utilizamos la anotacion @SpringBootApplication, no hace
  * falta pasarle la clase como parámetro
  *
