@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.dosideas</groupId>
-    <artifactId>dosideas-jee001-workshop</artifactId>
+    <artifactId>dosideas-java-con-spring-framework</artifactId>
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>dosideas-jee001-workshop Web App</name>
+    <name>dosideas-java-con-spring-framework</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
