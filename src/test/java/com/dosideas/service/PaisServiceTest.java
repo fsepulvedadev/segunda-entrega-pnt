@@ -21,12 +21,11 @@ import static org.junit.Assert.fail;
  * misma tiene.
  *
  * Este test comprueba el funcionamiento de la clase PaisRepository. Esta clase
- * utiliza Spring Data para acceder a la base de datos. Es necesario tener
- * entonces la base de datos iniciada, con el modelo de datos del workshop
- * cargado (ver archivo "Instrucciones para crear la BD").
- *
- * Para iniciar la base de datos: Ir al menu Window > Services > Databases >
- * Java DB > Click derecho > Start server
+ * utiliza Spring Data para acceder a la base de datos. El proyecto utiliza una
+ * base de datos en memoria (HSQLDB) que Spring levanta y configura de manera
+ * automática. Cuando se crea el contexto de Spring, se levanta esta base de
+ * datos y se ejecuta el archivo schema.sql (buscar en  "Other Sources") que
+ * crea las tablas PAIS y PROVINCIA, y le inserta datos de prueba.
  *
  * Para ejecutar este test en NetBeans: click derecho > "Test File" (CTRL + F6)
  *
@@ -41,13 +40,10 @@ import static org.junit.Assert.fail;
  * ApplicationConfig utilizamos la anotacion @SpringBootApplication, no hace
  * falta pasarle la clase como parámetro
  *
- * @Transactional: Indica que cada uno de los métodos de esta clase es
- * transaccional.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = ApplicationConfig.class)
-@Transactional
-public class PaisServiceComponenteTest {
+public class PaisServiceTest {
 
     /**
      * La instancia bajo test. La anotación @Autowired hará que Spring la
