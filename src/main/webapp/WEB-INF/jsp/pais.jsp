@@ -6,7 +6,7 @@
 
         <title>Paises</title>
 
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendor/twitter-bootstrap/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -61,15 +61,15 @@
         </div>
 
         <!-- Lib JS -->
-        <script src="js/lib/jquery-1.11.1.js"></script>
-        <script src="js/lib/bootstrap.min.js"></script>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/twitter-bootstrap/js/bootstrap.min.js"></script>
 
         <!-- JS de la aplicacion -->
-        <script src="js/app/escuelita.js"></script>
-        <script src="js/app/ui/ui.js"></script>
-        <script src="js/app/service/service.js"></script>
-        <script src="js/app/ui/pais/pais.js"></script>
-        <script src="js/app/service/pais/pais.js"></script>
+        <script src="js/escuelita.js"></script>
+        <script src="js/ui/ui.js"></script>
+        <script src="js/service/service.js"></script>
+        <script src="js/ui/pais/pais.js"></script>
+        <script src="js/service/pais/pais.js"></script>
     </body>
 </html>
 
