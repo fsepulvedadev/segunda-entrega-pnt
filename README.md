@@ -2,8 +2,6 @@
 
 Este es el proyecto base para el curso gratuito de Dos Ideas. 
 
-### What is this repository for? ###
-
 Durante este curso se verán conceptos iniciales para el desarrollo de aplicaciones Java, usando Spring Framework y Spring Boot para crear una aplicación de servicios. 
 Se usará TDD (Desarrollo Guiado por Tests) como práctica para la generación de código. 
 El curso cuenta con partes teóricas, reforzado con varias prácticas encadenadas entre si (es decir, la resolución de una práctica depende, en general, de la resolución anterior).
@@ -12,7 +10,6 @@ El curso cuenta con partes teóricas, reforzado con varias prácticas encadenada
 
 https://dosideas.com/cursos/course/introduccion-al-desarrollo-en-java-con-spring-framework-y-spring-boot
 
-### Who do I talk to? ###
+### ¡Necesito ayuda! ###
 
-* Leonardo De Seta 
-  ldeseta@gmail.com
+Leonardo De Seta / ldeseta@gmail.com
