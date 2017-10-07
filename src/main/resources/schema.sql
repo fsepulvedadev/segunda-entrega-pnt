@@ -1,3 +1,10 @@
+-- Este archivo es esjecutado automátciamente por Spring Boot, de manera que
+-- cuando se ejecutan los test se crea una base de datos en memoria (HSQLDB) y
+-- se ejecuta esta script contra dicha base.
+-- Al correr los tests, se cuenta con una base con datos de prueba listos para
+-- ser usados. Cuando termina la ejecución de las pruebas la base de datos deja
+-- de existir y todos los datos se pierden.
+
 DROP TABLE IF EXISTS pais;
 DROP TABLE IF EXISTS provincia;
 

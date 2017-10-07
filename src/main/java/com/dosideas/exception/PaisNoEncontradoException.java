@@ -10,16 +10,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
  * excepción sea lanzada, se le asociará el código de error NOT_FOUND (404). De
  * esta forma el cliente verá dicho error.
  *
- * @author DosIdeas
  */
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class PaisNoEncontradoException extends Exception {
 
-    /**
-     * Constructor de la excepción que llama al constructor de la clase padre.
-     *
-     * @param mensaje - mensaje utilizado por la excepción.
-     */
     public PaisNoEncontradoException(String mensaje) {
         super(mensaje);
     }

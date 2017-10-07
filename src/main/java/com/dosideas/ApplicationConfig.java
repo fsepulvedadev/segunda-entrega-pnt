@@ -1,13 +1,18 @@
 package com.dosideas;
 
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/*
- * En esta clase vemos las siguientes anotaciones:
+/**
+ * Esta clase contiene la configuración general de Spring. En particular,
+ * estamos usando Spring Boot, un componente de Spring que nos facilita la
+ * configuración general del framework.
  *
- * @Configuration: Indica que la clase es una clase de configuración de Spring
+ * Esta clase tiene una única anotación (aunque podría tener varias otras cosas).
+ *
+ * La anotación @SpringBootApplication es un "atajo" a escribir las siguientes
+ * anotaciones en esta clase:
+ *
+ * @Configuration: Le indica a Spring que esta es una clase de configuración.
  *
  * @EnableAutoConfiguration: Habilita la autoconfiguración de Spring Boot.
  *
@@ -15,12 +20,8 @@ import org.springframework.context.annotation.Configuration;
  * escanear. Si no se le indica ningún paquete, (como en este caso), toma como
  * paquete base el de esta clase
  *
- * Nota: Estas 3 anotaciones se pueden reemplazar por @SpringBootApplication.
- *
  */
-@Configuration
-@EnableAutoConfiguration
-@ComponentScan
+@SpringBootApplication
 public class ApplicationConfig {
 
 }

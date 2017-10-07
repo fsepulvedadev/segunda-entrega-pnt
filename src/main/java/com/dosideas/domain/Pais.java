@@ -8,10 +8,8 @@ import java.io.Serializable;
 
 /**
  * Este objeto de dominio utiliza anotaciones para relacionar la clase y sus
- * atributos con una tabla. Hibernate utiliza estas anotaciones para acceder a
- * la base de datos e interactuar con objetos de esta clase.
- *
- * @author ldeseta
+ * atributos con una tabla. JPA (a través de Hibernate) utiliza estas anotaciones
+ * para acceder a la base de datos e interactuar con objetos de esta clase.
  */
 @Entity
 public class Pais implements Serializable {

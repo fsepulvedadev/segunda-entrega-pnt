@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -47,7 +46,8 @@ public class PaisServiceTest {
 
     /**
      * La instancia bajo test. La anotación @Autowired hará que Spring la
-     * inyecte automáticamente
+     * inyecte automáticamente. En los tests no se puede usar constructor como
+     * mecanismo de inyección de dependencias.
      */
     @Autowired
     private PaisService paisService;
@@ -57,7 +57,7 @@ public class PaisServiceTest {
      * un Pais con el id buscado.
      */
     @Test
-    public void buscarPorId_ConIdExistente_retornaProvinciaConEseId() {
+    public void buscarPorId_conIdExistente_retornaProvinciaConEseId() {
         Long id = 1L;
 
         Pais pais = paisService.buscarPorId(id);
@@ -72,7 +72,7 @@ public class PaisServiceTest {
      * null al buscar un id que no existe.
      */
     @Test
-    public void buscarPorId_ConIdInexistente_retornaNull() {
+    public void buscarPorId_conIdInexistente_retornaNull() {
         Long id = 21L;
 
         Pais pais = paisService.buscarPorId(id);
@@ -85,7 +85,7 @@ public class PaisServiceTest {
      * IllegalArgumentException al intengar invocar al metodo con un null.
      */
     @Test(expected = InvalidDataAccessApiUsageException.class)
-    public void buscarPorId_ConIdNull_lanzaExcepcion() {
+    public void buscarPorId_conIdNull_lanzaExcepcion() {
         paisService.buscarPorId(null);
         fail("Debería haberse lanzado una excepción.");
     }

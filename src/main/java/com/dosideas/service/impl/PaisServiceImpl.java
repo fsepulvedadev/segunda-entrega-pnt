@@ -18,21 +18,22 @@ import java.util.List;
  * ser inyectada en donde sea necesario.
  *
  * La anotación @Transactional indica que todos los métodos de esta clase
- * deberán ser transaccionales (necesario para Hibernate).
+ * deberán ser transaccionales (necesario para JPA).
  *
- * La anotación @Autowired del atributo paisDao le indica a Spring que deberá
- * inyectar en dicho atributo una implementación de PaisDao (que es la clase de
- * acceso a datos para Pais).
+ * El constructor de esta clase recibe su dependencia obligatoria. Esto le
+ * indica a Spring que para constuir una instancia de esta clase deberá primero
+ * conseguir una instancia de su dependencia.
  *
- *
- * @author ldeseta
  */
 @Service
 @Transactional
 public class PaisServiceImpl implements PaisService {
 
-    @Autowired
-    private PaisRepository paisRepository;
+    private final PaisRepository paisRepository;
+
+    public PaisServiceImpl(PaisRepository paisRepository) {
+        this.paisRepository = paisRepository;
+    }
 
     @Override
     public Pais buscarPorId(Long id) {

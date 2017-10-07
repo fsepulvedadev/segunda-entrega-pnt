@@ -9,6 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+/**
+ * Este es un controlador de presentación (que se define anotándolo con @Controller).
+ * Se encarga de atender peticiones HTTP y devolver una vista para que muestre
+ * HTML al cliente.
+ *
+ * La anotación @RequestMapping en un método indica que ese método se invoca
+ * cuando se recibe una petición HTTP con esa dirección. El método en cuestión
+ * devuelve un Sring, que representa la vista (página JSP) que escribirá el
+ * HTML para el cliente.
+ */
 @Controller
 public class PaisController {
 
