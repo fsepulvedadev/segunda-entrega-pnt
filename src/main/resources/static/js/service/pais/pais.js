@@ -1,6 +1,6 @@
 escuelita.service.pais = (function () {
 
-    var urlService = "/dosideas-java-con-spring-framework/api/pais/";
+    var urlService = "/api/pais/";
 
     function buscarPorId(idPais) {
         var urlServiceBuscarPorId = urlService + idPais;

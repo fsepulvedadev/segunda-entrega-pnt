@@ -1,12 +1,7 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link th:href="@{/vendor/twitter-bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
         <title>Paises</title>
-
-        <link rel="stylesheet" href="vendor/twitter-bootstrap/css/bootstrap.min.css">
     </head>
     <body>
         <div class="container">
@@ -15,7 +10,7 @@
                     <h1>Paises</h1>
                 </div>
             </div>
-            <hr>
+            <hr/>
             <div class="row">
                 <div class="col-md-6">
                     <h4>Todos</h4>
@@ -27,12 +22,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <c:forEach var="pais" items="${paises}">
+                            <th:block th:each="pais : ${paises}">
                                 <tr>
-                                    <td>${pais.id}</td>
-                                    <td>${pais.nombre}</td>
+                                    <td th:text="${pais.id}"></td>
+                                    <td th:text="${pais.nombre}"></td>
                                 </tr>
-                            </c:forEach>
+                            </th:block>
                         </tbody>
                     </table>
                 </div>
@@ -41,7 +36,7 @@
                         <strong>No encontrado!</strong> No existe un pais con el ID buscado.
                     </div>
                     <div class="input-group">
-                        <input id="idPaisABuscar" type="text" class="form-control" placeholder="#ID pais a buscar">
+                        <input id="idPaisABuscar" type="text" class="form-control" placeholder="#ID pais a buscar"/>
                         <div class="input-group-btn">
                             <button id="botonBuscarPaisPorId" class="btn btn-info" type="button">Buscar</button>
                         </div>
@@ -61,15 +56,15 @@
         </div>
 
         <!-- Lib JS -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/twitter-bootstrap/js/bootstrap.min.js"></script>
+        <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+        <script th:src="@{/vendor/twitter-bootstrap/js/bootstrap.min.js}"></script>
 
         <!-- JS de la aplicacion -->
-        <script src="js/escuelita.js"></script>
-        <script src="js/ui/ui.js"></script>
-        <script src="js/service/service.js"></script>
-        <script src="js/ui/pais/pais.js"></script>
-        <script src="js/service/pais/pais.js"></script>
+        <script th:src="@{/js/escuelita.js}"></script>
+        <script th:src="@{/js/ui/ui.js}"></script>
+        <script th:src="@{js/service/service.js}"></script>
+        <script th:src="@{js/ui/pais/pais.js}"></script>
+        <script th:src="@{/js/service/pais/pais.js}"></script>
     </body>
 </html>
 

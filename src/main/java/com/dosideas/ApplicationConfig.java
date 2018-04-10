@@ -1,5 +1,6 @@
 package com.dosideas;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
@@ -7,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * estamos usando Spring Boot, un componente de Spring que nos facilita la
  * configuración general del framework.
  *
- * Esta clase tiene una única anotación (aunque podría tener varias otras cosas).
+ * Esta clase tiene una única anotación (aunque podría tener varias otras
+ * cosas).
  *
  * La anotación @SpringBootApplication es un "atajo" a escribir las siguientes
  * anotaciones en esta clase:
@@ -23,5 +25,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class ApplicationConfig {
+
+    public static void main(String[] args) {
+        SpringApplication.run(ApplicationConfig.class, args);
+    }
 
 }
