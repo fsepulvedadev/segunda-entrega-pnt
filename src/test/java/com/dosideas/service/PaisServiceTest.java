@@ -2,6 +2,7 @@ package com.dosideas.service;
 
 import com.dosideas.ApplicationConfig;
 import com.dosideas.domain.Pais;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,10 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.fail;
+import static org.assertj.core.api.Assertions.*;
 
 /**
  * Esta clase representa un test de componente. Los tests de componentes se
@@ -62,9 +60,9 @@ public class PaisServiceTest {
 
         Pais pais = paisService.buscarPorId(id);
 
-        assertNotNull(pais);
-        assertEquals(id, pais.getId());
-        assertEquals("Argentina", pais.getNombre());
+        assertThat(pais).isNotNull();
+        assertThat(pais.getId()).isEqualTo(id);
+        
     }
 
     /**
@@ -76,13 +74,12 @@ public class PaisServiceTest {
         Long id = 21L;
 
         Pais pais = paisService.buscarPorId(id);
-
-        assertNull(pais);
+        assertThat(pais).isNull();
     }
 
     /**
      * Test de buscarPorId method con un id null. El metodo debe tirar una
-     * IllegalArgumentException al intengar invocar al metodo con un null.
+     * InvalidDataAccessApiUsageException al intengar invocar al metodo con un null.
      */
     @Test(expected = InvalidDataAccessApiUsageException.class)
     public void buscarPorId_conIdNull_lanzaExcepcion() {
