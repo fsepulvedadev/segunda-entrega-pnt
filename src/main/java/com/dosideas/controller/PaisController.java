@@ -16,8 +16,7 @@ import java.util.List;
  *
  * La anotación @RequestMapping en un método indica que ese método se invoca
  * cuando se recibe una petición HTTP con esa dirección. El método en cuestión
- * devuelve un Sring, que representa la vista (página JSP) que escribirá el HTML
- * para el cliente.
+ * devuelve un Sring, que representa la vista (página HTML).
  */
 @Controller
 public class PaisController {
