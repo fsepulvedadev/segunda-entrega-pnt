@@ -9,7 +9,3 @@ El curso cuenta con partes teóricas, reforzado con varias prácticas encadenada
 ### ¿Dónde puedo acceder al curso? ###
 
 https://dosideas.com/cursos/course/introduccion-al-desarrollo-en-java-con-spring-framework-y-spring-boot
-
-### ¡Necesito ayuda! ###
-
-Leonardo De Seta / ldeseta@gmail.com
