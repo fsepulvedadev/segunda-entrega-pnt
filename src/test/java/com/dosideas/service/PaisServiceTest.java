@@ -1,6 +1,5 @@
 package com.dosideas.service;
 
-import com.dosideas.ApplicationConfig;
 import com.dosideas.domain.Pais;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +8,6 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 
 import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 /**
  * Esta clase representa un test de componente. Los tests de componentes se
@@ -28,18 +25,13 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
  *
  * Podemos ver que esta clase tiene las siguientes anotaciones:
  *
- * @RunWith(SpringRunner.class): Le indica a JUnit que utilize el Runner de
- * Spring al momento de correr los test (necesario para levantar el contexto de
- * Spring).
- *
  * @SpringBootTest: Si utilizamos una aplicación con Spring Boot, nos da
  * diversas features de Spring Boot (ver Javadoc). Si en la clase
  * ApplicationConfig utilizamos la anotacion @SpringBootApplication, no hace
  * falta pasarle la clase como parámetro
  *
  */
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = ApplicationConfig.class)
+@SpringBootTest
 public class PaisServiceTest {
 
     /**
