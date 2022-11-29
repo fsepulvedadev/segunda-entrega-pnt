@@ -1,16 +1,13 @@
 package com.dosideas.service;
 
-import com.dosideas.ApplicationConfig;
 import com.dosideas.domain.Pais;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.dao.InvalidDataAccessApiUsageException;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
 /**
  * Esta clase representa un test de componente. Los tests de componentes se
@@ -21,16 +18,12 @@ import static org.assertj.core.api.Assertions.*;
  * utiliza Spring Data para acceder a la base de datos. El proyecto utiliza una
  * base de datos en memoria (HSQLDB) que Spring levanta y configura de manera
  * automática. Cuando se crea el contexto de Spring, se levanta esta base de
- * datos y se ejecuta el archivo schema.sql (buscar en  "Other Sources") que
- * crea las tablas PAIS y PROVINCIA, y le inserta datos de prueba.
+ * datos y se ejecuta el archivo schema.sql (buscar en "Other Sources") que crea
+ * las tablas PAIS y PROVINCIA, y le inserta datos de prueba.
  *
  * Para ejecutar este test en NetBeans: click derecho > "Test File" (CTRL + F6)
  *
  * Podemos ver que esta clase tiene las siguientes anotaciones:
- *
- * @RunWith(SpringRunner.class): Le indica a JUnit que utilize el Runner de
- * Spring al momento de correr los test (necesario para levantar el contexto de
- * Spring).
  *
  * @SpringBootTest: Si utilizamos una aplicación con Spring Boot, nos da
  * diversas features de Spring Boot (ver Javadoc). Si en la clase
@@ -38,8 +31,7 @@ import static org.assertj.core.api.Assertions.*;
  * falta pasarle la clase como parámetro
  *
  */
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = ApplicationConfig.class)
+@SpringBootTest
 public class PaisServiceTest {
 
     /**
@@ -62,7 +54,7 @@ public class PaisServiceTest {
 
         assertThat(pais).isNotNull();
         assertThat(pais.getId()).isEqualTo(id);
-        
+
     }
 
     /**
@@ -79,11 +71,13 @@ public class PaisServiceTest {
 
     /**
      * Test de buscarPorId method con un id null. El metodo debe tirar una
-     * InvalidDataAccessApiUsageException al intengar invocar al metodo con un null.
+     * InvalidDataAccessApiUsageException al intengar invocar al metodo con un
+     * null.
      */
-    @Test(expected = InvalidDataAccessApiUsageException.class)
+    @Test
     public void buscarPorId_conIdNull_lanzaExcepcion() {
-        paisService.buscarPorId(null);
-        fail("Debería haberse lanzado una excepción.");
+        assertThatExceptionOfType(InvalidDataAccessApiUsageException.class)
+                .isThrownBy(() -> paisService.buscarPorId(null));
+
     }
 }
