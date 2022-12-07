@@ -1,37 +1,41 @@
 escuelita.ui.pais = (function () {
 
-    var $bodyTablaPais = $("#bodyTablaPais");
-    var $spanIdPaisEncontrado = $("#idPaisEncontrado");
-    var $divMensajeNoEncontrado = $("#mensajeNoEncontrado");
+    const bodyTablaPais = document.getElementById("bodyTablaPais");
+    const spanIdPaisEncontrado = document.getElementById("idPaisEncontrado");
+    const divMensajeNoEncontrado = document.getElementById("mensajeNoEncontrado");
 
     function inicializar() {
         buscar(1);
         bindearEventosABotones();
     }
 
-    function buscar(idPais) {
+    async function buscar(idPais) {
         escuelita.service.pais.buscarPorId(idPais)
-                .done(mostrar)
-                .fail(mostrarMensajeNoEncontrado);
+            .then(pais => mostrar(pais))
+            .catch(error => mostrarMensajeNoEncontrado());
     }
 
     function mostrar(pais) {
-        $bodyTablaPais.html("<tr><td>" + pais.id + "</td><td>" + pais.nombre + "</td></tr>");
-        $spanIdPaisEncontrado.text(pais.id);
+        bodyTablaPais.innerHTML = "<tr><td>" + pais.id + "</td><td>" + pais.nombre + "</td></tr>";
+        spanIdPaisEncontrado.textContent = pais.id;
     }
 
     function bindearEventosABotones() {
-        $("#botonBuscarPaisPorId").on("click", function () {
-            $("#mensajeNoEncontrado").addClass("hide");
-            var idPaisABuscar = $("#idPaisABuscar").val();
-            buscar(idPaisABuscar);
+
+        const botonBuscarPaisPorId = document.getElementById("botonBuscarPaisPorId");
+        const mensajeNoEncontrado = document.getElementById("mensajeNoEncontrado");
+        const spanPaisABuscar = document.getElementById("idPaisABuscar");
+
+        botonBuscarPaisPorId.addEventListener("click", function () {
+            mensajeNoEncontrado.classList.add("d-none");
+            buscar(spanPaisABuscar.value);
         });
     }
 
     function mostrarMensajeNoEncontrado() {
-        $bodyTablaPais.text("");
-        $spanIdPaisEncontrado.text("");
-        $divMensajeNoEncontrado.removeClass("hide");
+        bodyTablaPais.textContent = "";
+        spanIdPaisEncontrado.textContent = "";
+        divMensajeNoEncontrado.classList.remove("d-none");
     }
 
     return {
@@ -41,6 +45,6 @@ escuelita.ui.pais = (function () {
 
 })();
 
-$(document).ready(function () {
+window.addEventListener('DOMContentLoaded', function () {
     escuelita.ui.pais.inicializar();
 });

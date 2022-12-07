@@ -1,10 +1,11 @@
 escuelita.service.pais = (function () {
 
-    var urlService = "/api/pais/";
+    const urlService = "/api/pais/";
 
-    function buscarPorId(idPais) {
-        var urlServiceBuscarPorId = urlService + idPais;
-        return $.get(urlServiceBuscarPorId);
+    async function buscarPorId(idPais) {
+        const urlServiceBuscarPorId = urlService + idPais;
+        const data = await fetch(urlServiceBuscarPorId);
+        return data.ok ? await data.json() : Promise.reject(response);
     }
 
     return {
