@@ -1,1 +1,1 @@
-var escuelita = {};
+const escuelita = {};
