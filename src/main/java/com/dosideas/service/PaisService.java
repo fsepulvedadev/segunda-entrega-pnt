@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Esta es la clase de negocio que expone operaciones relacionadas con el objeto
@@ -27,6 +28,7 @@ import java.util.List;
 @Transactional
 public class PaisService {
 
+    @Autowired
     private final PaisRepository paisRepository;
 
     public PaisService(PaisRepository paisRepository) {
